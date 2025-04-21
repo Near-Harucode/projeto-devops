@@ -8,6 +8,7 @@ def subtrair(a, b):
 
 def multiplicar(a, b):
     return a * b
+    return f"A multiplicação entre {a} e {b} resulta em: {resultado}"
 
 def dividir(a, b):
     if b == 0:
