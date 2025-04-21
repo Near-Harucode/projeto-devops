@@ -12,4 +12,5 @@ def test_multiplicar():
 def test_dividir():
     assert dividir(10, 2) == 5
 
-# CI test trigger
+# Disparando novo build do CI
+
