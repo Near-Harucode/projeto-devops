@@ -3,6 +3,10 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"mensagem": "Bem-vindo à Calculadora API com FastAPI 🚀"}
+
 # Modelo para entrada de dados
 class Operacao(BaseModel):
     a: float
