@@ -1,19 +1,27 @@
-def somar(a, b):
-    return a + b
-    return f"O resultado da soma é: {resultado}"
+from fastapi import FastAPI
+from pydantic import BaseModel
 
-def subtrair(a, b):
-    return a - b
-    return f"Subtraindo {b} de {a}, temos: {resultado}"
+app = FastAPI()
 
-def multiplicar(a, b):
-    return a * b
-    return f"A multiplicação entre {a} e {b} resulta em: {resultado}"
+# Modelo para entrada de dados
+class Operacao(BaseModel):
+    a: float
+    b: float
 
-def dividir(a, b):
-    if b == 0:
-        raise ValueError("Divisão por zero não é permitida.")
-    return a / b
-    return f"Dividindo {a} por {b}, o resultado é: {resultado}"
+@app.post("/somar")
+def somar(valores: Operacao):
+    return {"resultado": valores.a + valores.b}
 
-#Atualizando para testar o CI/CD -->
+@app.post("/subtrair")
+def subtrair(valores: Operacao):
+    return {"resultado": valores.a - valores.b}
+
+@app.post("/multiplicar")
+def multiplicar(valores: Operacao):
+    return {"resultado": valores.a * valores.b}
+
+@app.post("/dividir")
+def dividir(valores: Operacao):
+    if valores.b == 0:
+        return {"erro": "Divisão por zero não é permitida"}
+    return {"resultado": valores.a / valores.b}
