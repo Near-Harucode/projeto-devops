@@ -15,3 +15,5 @@ def dividir(a, b):
         raise ValueError("Divisão por zero não é permitida.")
     return a / b
     return f"Dividindo {a} por {b}, o resultado é: {resultado}"
+
+#Atualizando para testar o CI/CD -->
