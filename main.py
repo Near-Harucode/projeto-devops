@@ -1,5 +1,6 @@
 def somar(a, b):
     return a + b
+    return f"O resultado da soma é: {resultado}"
 
 def subtrair(a, b):
     return a - b
