@@ -27,5 +27,5 @@ def multiplicar(valores: Operacao):
 @app.post("/dividir")
 def dividir(valores: Operacao):
     if valores.b == 0:
-        return {"erro": "Divisão por zero não é permitidaa"}
+        return {"erro": "Divisão por zero não é permitida"}
     return {"resultado": valores.a / valores.b}
