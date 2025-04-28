@@ -26,4 +26,4 @@ def test_dividir():
 def test_divisao_por_zero():
     response = client.post("/dividir", json={"a": 10, "b": 0})
     assert response.status_code == 200
-    assert response.json() == {"erro": "Divisão por zero não é permitida"}  # Corrigido aqui
+    assert response.json() == {"erro": "Divisão por zero não é permitida"}  
