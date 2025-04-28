@@ -36,6 +36,6 @@ jobs:
       - name: Run Discord Webhook
         uses: Sniddl/discord-commits@v1.6
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOKS }}
+          webhook: ${{ secrets.DISCORD_WEBHOOKS }}
           template: "avatar-with-link"
           include-extras: true
